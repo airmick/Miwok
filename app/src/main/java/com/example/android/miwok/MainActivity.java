@@ -33,15 +33,16 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         // Create an adapter that knows which fragment should be shown on each page
-        CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager());
+        CategoryAdapter adapter = new CategoryAdapter(this, getSupportFragmentManager());
 
         // Set the adapter onto the view pager
         assert viewPager != null;
         viewPager.setAdapter(adapter);
 
         // Set TabLayout
-        //TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        //tabLayout.setupWithViewPager(viewPager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        assert tabLayout != null;
+        tabLayout.setupWithViewPager(viewPager);
     }
 
 }
